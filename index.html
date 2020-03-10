@@ -6,48 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" >
 
-    <title>Hello, world!</title>
+    <title>Frontend</title>
   </head>
   <body>
     <div class="container">
-    <h1 class="jumbotron" id="heading">MongoDB Frontend</h1>
+      <h1 id="heading" class="jumbotron text-dark">MongoDB Frontend</h1>
 
-    <button id="homeBtn" type="button"  class="btn btn-light" name="button">Home</button>
-    <button id="adminBtn" type="button"  class="btn btn-light" name="button">Admin</button>
+      <button id="homeBtn" type="button" class="btn btn-dark rounded-pill mr-20px">Home</button>
+      <button id="adminBtn" type="button" class="btn btn-dark rounded-pill">Admin</button>
 
-    <br>
-    <br>
+      <!-- homePage -->
+      <div id="homePage">
+      <button id="viewProducts" type="button" class="btn btn-dark rounded-pill">View Products</button>
+        <div id="productCards">  </div>
+      </div>
 
-    <!-- homepage -->
-  <div id="homePage">
-    This is my homepage
-  </div>
+      <!-- adminPage -->
+      <div id="adminPage" class="my-5 mx-3 px-3 bg-dark text-light">
 
-  <br>
+        <button id="loginBtn" type="button" class="btn btn-dark rounded-pill mr-20px">Login</button>
+        <button id="logoutBtn" type="button" class="btn btn-dark rounded-pill">Logout</button>
+        <button id="registerBtn" type="button" class="btn btn-dark rounded-pill mr-20px">Register</button>
+        <button id="viewUserBtn" type="button" class="btn btn-dark rounded-pill">View all users</button>
 
-    <!-- adminpage -->
-  <div id="adminPage">
-    This is my adminpage
-  </div>
+      <!-- login form  -->
+        <form id="loginForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" class="form-control" name="username" value="username">
+          <br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" class="form-control" name="password" value="password">
+          <br>
 
-  <br>
-  <br>
-  <button id="loginBtn" type="button"  class="btn btn-dark" name="button">Login</button>
-  <button id="logoutBtn" type="button"  class="btn btn-dark" name="button">Logout</button>
-  <button id="registerBtn" type="button"  class="btn btn-dark" name="button">Register</button>
-  <button id="viewUserBtn" type="button"  class="btn btn-dark" name="button">View User</button>
+          <button id="submitBtn" name="button" type="submit" class="btn btn-lg btn-light">Submit</button>
+        </form>
+        <br>
+
+        <!-- Register form  -->
+          <form id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="registerUsername" class="form-control" name="username" value="username">
+            <br>
+            <label for="username">Email:</label>
+            <input type="text" id="registerEmail" class="form-control" name="email" value="email">
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="registerPassword" class="form-control" name="password" value="password">
+            <br>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" value="password">
+            <br>
+
+            <button id="submitRegisterBtn" name="button" type="submit" class="btn btn-lg btn-light">Submit</button>
+          </form>
+          <br>
+
+        <!-- Product Manipulation -->
+
+        <div id="manipulate">
+          <button id="addProductBtn" name="button" type="button" class="btn btn-lg btn-light">Add</button>
+          <button id="updateProductBtn" name="button" type="button" class="btn btn-lg btn-light">Update</button>
+          <button id="deleteProductBtn" name="button" type="button" class="btn btn-lg btn-light">Delete</button>
+        </div>
+
+        <!-- Input ID -->
+
+        <div id="inputIdDiv" class="">
+          <form id="productForm" class="bg-dark py-5 px-5">
+            <h1 class="text-primary"> Product Form </h1>
+            <br>
+
+            <label class="mr-5" for="productId"> Enter product Id: </label>
+            <input type="text" class="ml-5" id="productId" name="inputId" >
+            <br>
+
+            <label class="mr-4" for="productName"> Enter name of the product </label>
+            <input type="text" id="productName" name="productName" >
+            <br>
+
+            <label class="mr-4" for="productPrice"> Enter price of the product </label>
+            <input type="number" id="productPrice" name="productPrice" >
+            <br>
+
+            <label class="mr-5" for="userId"> Enter the userId </label>
+            <input type="text" class="ml-5" id="userId" name="userId" >
+            <br>
+
+            <button id="updateProduct" name="productButton" type="submit" class="btn btn-primary">Update product</button>
+          </form>
+        </div>
 
 
-    </div>
+      </div> <!-- admin Page -->
+
+
+    </div> <!-- container -->
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
